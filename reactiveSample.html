@@ -1,0 +1,27 @@
+<head>
+  <title>reactiveSample</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  {{#each tasks}}
+    {{#if active}}
+      {{> editItem}}
+    {{else}}
+      {{> showItem}}
+    {{/if}}
+    <br/>
+  {{/each}}
+</template>
+
+<template name="editItem">
+  <input type="text" value="{{title}}"/>
+</template>
+<template name="showItem">
+  <span class="edit">{{title}}</span>
+</template>
